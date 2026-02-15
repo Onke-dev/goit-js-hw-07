@@ -4,6 +4,9 @@ const items = categories.querySelectorAll(".item");
 console.log(`Number of categories: ${items.length}`);
 
 items.forEach(item => {
-    console.log(item.textContent.h2);
+    const title = item.querySelector("h2")
+    const liItem = item.querySelectorAll("ul > li");
+    console.log(`Category: ${title.textContent}`);
+    console.log(`Elements: ${liItem.length}`);
 });
 
