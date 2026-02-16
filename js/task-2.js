@@ -25,18 +25,14 @@ const images = [
   },
 ];
 
-function itemTemplate(item) {
-  return `<li>
-        <img src="${item.url}" alt="${item.alt}">
-      </li>`;
-}
-
-function itemsTemplate(items) {
-  return items.map(itemTemplate).join("");
-}
-
-const markup = itemsTemplate(images);
-
 const containerElem = document.querySelector(".gallery");
 
-containerElem.innerHTML = markup;
+const markup = images
+  .map(
+    (item) => `<li>
+        <img src="${item.url}" alt="${item.alt}">
+      </li>`,
+  )
+  .join("");
+
+containerElem.insertAdjacentHTML("beforeend", markup);
